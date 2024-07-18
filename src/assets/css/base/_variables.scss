@@ -1,0 +1,160 @@
+/** ---------------------------------------------------------------------
+ ** 描述：sass变量
+ ** --------------------------------------------------------------------- */
+ @import "functions";
+
+
+ /* ------------------------------ 全局配置 ------------------------------ */
+ 
+ /* 应用类型{String} */
+ $app-type: web !default; // [前台样式:web, 后台样式:admin, 移动端样式:mobile]
+ 
+ 
+ /* ------------------------------ 颜色体系 ------------------------------ */
+ 
+ /* 主题色{Color+} */
+ $color-main: #218fff !default; // 主色
+ $color-main-hover: hover($color-main) !default; // 主色:滑过
+ $color-main-active: active($color-main) !default; // 主色:激活
+ $color-secondary: #4ebd65 !default; // 辅色
+ $color-secondary-hover: hover($color-secondary) !default; // 辅色:滑过
+ $color-secondary-active: active($color-secondary) !default; // 辅色:激活
+ $color-weaking: #fff !default; // 弱化色
+ $color-warning-mobile: #f0595f !default; // 移动端分数背景
+ $color-warning-webrad: #f16a6a !default; //web端分数背景
+ 
+ /* 背景色{Color+} */
+ $color-bg-body: #ebf0f7 !default; // 页面背景
+ $color-bg-content: #fff !default; // 内容背景
+ $color-bg-card: #edf2f7 !default; // 卡片背景
+ $color-bg-footer: #c5ccdb !default; // 页脚背景
+ $color-bg-disabled: #f3f7fa !default; // 禁用背景
+ $color-bg-mask: rgba(0, 0, 0, .4) !default; // 摭盖层背景
+ $color-bg-error: #fff0ef !default; // 报错背景
+ $color-bg-weaking: #edf5ff !default; //划过背景弱化色
+ $color-bg-tag: #93acc2 !default; // 标签默认背景色
+ $color-bg-btndisabled: #90c7ff !default; //禁用蓝
+ $color-bg-controls-hover: #f6faff !default; //控件划过背景
+ 
+ /* message标识背景色{Color+} */
+ $color-info-bg: #e9f8fe !default; // 提示
+ $color-success-bg: #ecfceb !default; // 成功
+ $color-warning-bg: #fffbe7 !default; // 警告
+ $color-error-bg: #fff0ef !default; // 错误
+ 
+ /* 标识色{Color+} */
+ $color-info: #78cf70 !default; // 提示
+ $color-success: #78cf70 !default; // 成功
+ $color-warning: #ffb555 !default; // 警告
+ $color-error: #ff0000 !default; // 错误
+ $color-state-on: #fdc345 !default; //状态色on
+ $color-state-off: #93acc2 !default; //状态色off
+ 
+ /* 文本色{Color+} */
+ $color-text-main: #333 !default; // 主文本
+ $color-text-secondary: #666 !default; // 辅助文本
+ $color-text-weaking: #999 !default; // 弱化文本
+ $color-text-link-secondary: #537290 !default; // 链接辅助颜色（图标在一起的）
+ $color-text-disabled: #ccc !default; // 禁用文本
+ $color-text-highlight: #ff9600 !default; // 高亮文本
+ $color-text-inverse: #fff !default; // 反转文本
+ $color-text-link: $color-main  !default; // 链接色
+ $color-text-link-hover: hover($color-text-link) !default; // 链接滑过色
+ $color-text-placeholder: #ccc !default; // 占位文本
+ $color-text-error: #f43c37 !default; // 错误文本
+ $color-text-grade-analysis: #36c36b !default; //考试分析文本绿
+ $color-text-warning-mobile: #f97479 !default; // 移动端提示信息文字
+ 
+ /* 边框色{Color+} */
+ $color-border-main: #218fff !default; // 主边框
+ $color-border-control: #bfcbd9 !default; // 控件边框
+ $color-border-secondary: #dee3ee !default; // 辅边框
+ $color-border-disabled: rgb(2, 2, 2) !default; // 禁用边框
+ $color-border-weaking: #ebeef5 !default; // 弱化边框
+ $color-border-pop: #adbbcd !default; // 弹出层边框
+ $color-border-error: #ffbdb8 !default; // 报错边框
+ $color-border-bottom: #e6ebf0 !default; //下边框线
+ $color-border-scorenumber: #bdcae1 !default; //成绩数值边框色
+ $color-border-control-mobile: #eee !default; //移动端控件边框色
+ $color-border-analysis-webcol: #dcdfe6 !default; //试卷分析边框色
+ $color-border-analysis-webcolbtns: #b6cadb !default; //试卷分析按钮边框色
+ 
+ 
+ /* ------------------------------ 字体体系 ------------------------------ */
+ 
+ /* 字体{NoChange} */
+ $font-family-default: "Helvetica Neue", "Microsoft YaHei", "\5b8b\4f53", "Arial", "Helvetica", sans-serif !default; // 字体
+ 
+ /* 字体尺寸{FontSize+} */
+ $font-size-default: 14px !default; // 默认字号
+ $font-size-small: $font-size-default - 2px !default; // 小字号
+ $font-size-tiny: $font-size-default - 4px !default; // 超小字号
+ $font-size-medium: $font-size-default + 2px !default; // 中字号
+ $font-size-large: $font-size-default + 4px !default; // 大字号
+ $font-size-huge: $font-size-default + 6px !default; // 大字号
+ 
+ 
+ /* ------------------------------ 间距体系 ------------------------------ */
+ 
+ /* 行高{NoChange} */
+ $line-height-default: 1.5 !default; // 行高
+ 
+ /* 间距{Spacing+} */
+ $spacing-step: 5px !default; // 间距步长
+ $spacing-tiny: $spacing-step * 2 !default; // 超小间距
+ $spacing-small: $spacing-step * 3 !default; // 小间距
+ $spacing-medium: $spacing-step * 4 !default; // 中间距
+ $spacing-large: $spacing-step * 6 !default; // 大间距
+ $spacing-huge: $spacing-step * 8 !default; // 超大间距
+ 
+ 
+ /* ------------------------------ 尺寸体系 ------------------------------ */
+ 
+ /* 控件高度{String+} */
+ $ctr-height-step: 6px !default; // 高度步长
+ $ctr-height-default: 30px !default; // 默认高度
+ $ctr-height-small: $ctr-height-default - $ctr-height-step  !default; // 小高度
+ $ctr-height-medium: $ctr-height-default + $ctr-height-step  !default; // 中高度
+ $ctr-height-large: $ctr-height-default + $ctr-height-step * 2 !default; // 大高度
+ 
+ /* 控件宽度{String+} */
+ $ctr-width-step: 40px !default; // 宽度步长
+ $ctr-width-default: 100% !default; // 默认高度
+ $ctr-width-tiny: $ctr-width-step * 2 !default; // 超小宽度
+ $ctr-width-small: $ctr-width-step * 3 !default; // 小宽度
+ $ctr-width-medium: $ctr-width-step * 4 !default; // 中宽度
+ $ctr-width-large: $ctr-width-step * 5 !default; // 大宽度
+ $ctr-width-huge: $ctr-width-step * 6 !default; // 超大宽度
+ 
+ 
+ /* ------------------------------ 响应式体系(pc优先) ------------------------------ */
+ 
+ /* 响应式断点{NoChange} */
+ $media-breakpoints: (
+   pc: 1200px,
+   lpad: 992px,
+   pad: 768px,
+   lphone: 576px,
+   phone: 0) !default; // 媒体查询断点
+ $container-widths: (
+   pc:1200px,
+   lpad:960px,
+   pad:auto,
+   lphone:auto,
+   phone:auto) !default; // 主容器宽度
+ 
+ /* ------------------------------ 其它 ------------------------------ */
+ 
+ /* 圆角{NoChange} */
+ $border-radius: 6px !default; // 圆角
+ $border-radius-small: 3px !default; // 小圆角
+ $border-radius-mobile: 4px !default; // 移动端圆角
+ 
+ /* 过渡时间{NoChange} */
+ $time: .12s !default; // 过渡时间
+ 
+ /* 渲染层级{String} */
+ $zindex-high: 1000 !default; // 图层-高
+ $zindex-higher: 1030 !default; // 图层-更高
+ $zindex-highest: 1050 !default; // 图层-最高
+ 

@@ -1,0 +1,124 @@
+/* 间距尺寸 */
+
+// stylelint-disable
+// 宽度尺寸
+.w-step {
+  width: $ctr-width-step !important;
+}
+
+.w-tiny {
+  width: $ctr-width-tiny !important;
+}
+
+.w-small {
+  width: $ctr-width-small !important;
+}
+
+.w-medium {
+  width: $ctr-width-medium !important;
+}
+
+.w-large {
+  width: $ctr-width-large !important;
+}
+
+.w-huge {
+  width: $ctr-width-huge !important;
+}
+
+// 百分比宽度
+@for $i from 1 through 20 {
+  .w-#{$i * 5} {
+    width: percentage($i * 5) !important;
+  }
+}
+
+// 高度尺寸
+.h-step {
+  height: $ctr-height-step !important;
+}
+
+.h-default {
+  height: $ctr-height-default !important;
+}
+
+.h-small {
+  height: $ctr-height-small !important;
+}
+
+.h-medium {
+  height: $ctr-height-medium !important;
+}
+
+.h-large {
+  height: $ctr-height-large !important;
+}
+
+// 间距
+$props: (
+  "m": margin,
+  "p": padding
+);
+
+$sides: (
+  "t": top,
+  "r": right,
+  "b": bottom,
+  "l": left,
+  "x": right left,
+  "y": top bottom,
+  "a": top right bottom left
+);
+
+$sizes: (
+  "step": $spacing-step,
+  "tiny": $spacing-tiny,
+  "small": $spacing-small,
+  "medium": $spacing-medium,
+  "large": $spacing-large,
+  "huge": $spacing-huge,
+  "0": 0
+);
+
+@each $propKey, $propVal in $props {
+  @each $sideKey, $sideVal in $sides {
+    $side: if($sideKey != a, $sideKey, "");
+
+    @each $sizeKey, $sizeVal in $sizes {
+      .#{$propKey}#{$side}-#{$sizeKey} {
+        @each $value in $sideVal {
+          #{$propVal}-#{$value}: $sizeVal !important;
+        }
+      }
+    }
+  }
+}
+
+// 移动绝对距离
+$postions: (
+  "t": top,
+  "l": left
+);
+
+@each $propKey, $propVal in $postions {
+  @for $i from -5 through 5 {
+    $negative: if($i < 0, n + abs($i), $i);
+
+    @if $i != 0 {
+      .d#{$propKey}-#{$negative} {
+        position: relative;
+        #{$propVal}: $i + px !important;
+      }
+    }
+  } 
+}
+
+// 居中对齐
+.vm {
+  vertical-align: middle !important;
+}
+
+// 有底部浮动按钮时父元素下间距
+.pb-btfix {
+  padding-bottom: 80px !important;
+}
